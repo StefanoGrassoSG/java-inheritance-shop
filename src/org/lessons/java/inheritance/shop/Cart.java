@@ -14,6 +14,10 @@ public class Cart {
 			prodCount++;
 			System.out.print("che prodotto vuoi aggiungere?");
 			String product = in.nextLine();
+			if(!product.equals("headphone") || !product.equals("smartphone") || !product.equals("television")) {
+				System.out.print("puoi inserire solo: smartphone,television o headphone");
+				break;
+			};
 			System.out.print("Inserisci il nome: ");
 			String name = in.nextLine();
 			System.out.print("Inserisci una descrizione: ");

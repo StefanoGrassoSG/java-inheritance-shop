@@ -1,6 +1,5 @@
 package org.lessons.java.inheritance.shop;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Cart {
@@ -14,7 +13,7 @@ public class Cart {
 			prodCount++;
 			System.out.print("che prodotto vuoi aggiungere?");
 			String product = in.nextLine();
-			if(!product.equals("cuffie") && !product.equals("smartphone") && !product.equals("tv")) {
+			if(!product.equalsIgnoreCase("cuffie") && !product.equalsIgnoreCase("smartphone") && !product.equalsIgnoreCase("tv")) {
 				System.out.print("puoi inserire solo: smartphone,tv o cuffie\n");
 				continue;
 			};
@@ -27,7 +26,7 @@ public class Cart {
 			System.out.print("Inserisci la percentuale di VAT che vuoi applicare: ");
 			int perc = Integer.parseInt(in.nextLine());
 			
-			if(product.equals("smartphone")) {
+			if(product.equals("equalsIgnoreCase")) {
 			System.out.print("Inserisci l'IMEI code: ");
 			String imei = in.nextLine();
 			System.out.print("Inserisci la quantità di MB di memoria: ");
@@ -36,7 +35,7 @@ public class Cart {
 			products[prodCount - 1] = s;
 			}
 			
-			else if(product.equals("tv")) {
+			else if(product.equalsIgnoreCase("tv")) {
 				System.out.print("Inserisci i pollici: ");
 				float inches = Float.parseFloat(in.nextLine());
 				System.out.print("Inserisci se è smart: ");
@@ -51,7 +50,7 @@ public class Cart {
 				products[prodCount - 1] = s;
 			}
 			
-			else if(product.equals("cuffie")) {
+			else if(product.equalsIgnoreCase("cuffie")) {
 				System.out.print("Inserisci il colore: ");
 				String color = in.nextLine();
 				System.out.print("Inserisci se è wireless: ");
@@ -77,7 +76,7 @@ public class Cart {
 			System.out.print("vuoi aggiungere un'altro prodotto?");
 			String another = in.nextLine();
 			if(another.equals("no")) {
-				System.out.print("hai la carta fedelta?");
+				System.out.print("hai la carta fedelta?\n");
 				String loyalS = in.nextLine();
 				loyal = loyalS.equals("si")? true : false;
 				for (int x = 0; x < products.length; x++) {
@@ -92,6 +91,7 @@ public class Cart {
 				    }
 				}
 				System.out.println("il prezzo finale è: " + String.format("%.2f", total));
+				in.close();
 				break;
 				}	
 			}

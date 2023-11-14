@@ -83,13 +83,14 @@ public class Product {
 		
 		return "Product:\n"
 				+ "code: " + getCode() + "\n"
+				+ "pad code: " + getCodePad() + "\n"
 				+ "name: " + getName() + "\n"
 				+ "description: " + getDescription() + "\n"
 				+ "price: " + String.format("%.02f", getPrice()) + "$\n"
 				+ "VAT: " + getVat() + "%\n"
 				+ "price with VAT: " + String.format("%.02f", getVatPrice()) + "$\n"
 				+ "discounted price: " + String.format("%.02f", getDiscountPrice()) + "$\n"
-				+ "Full Name: " + getFullName() + "\n"
-				+ "pad code: " + getCodePad() + "\n";
+				+ "Full Name: " + getFullName() + "\n";
+				
 	}
 }

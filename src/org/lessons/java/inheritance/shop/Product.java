@@ -73,6 +73,10 @@ public class Product {
 		
 		return getCode() + "-" + getName();
 	}
+	public double getDiscountPrice() {
+		
+		return getVatPrice() * 0.98;
+	}
 	
 	@Override
 	public String toString() {
@@ -82,6 +86,7 @@ public class Product {
 				+ "name: " + getName() + "\n"
 				+ "description: " + getDescription() + "\n"
 				+ "price: " + String.format("%.02f", getPrice()) + "$\n"
+				+ "discounted price: " + String.format("%.02f", getDiscountPrice()) + "$\n"
 				+ "VAT: " + getVat() + "%\n"
 				+ "price with VAT: " + String.format("%.02f", getVatPrice()) + "$\n"
 				+ "Full Name: " + getFullName() + "\n"

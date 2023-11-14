@@ -26,6 +26,13 @@ public class Television extends Product {
 	public void setSmart(boolean smart) {
 		this.smart = smart;
 	}
+	@Override
+	public double getDiscountPrice() {
+		if(!smart) {
+			return getVatPrice() * 0.90;
+		}
+		return getVatPrice() * 0.98;
+	}
 	
 	@Override
 	public String toString() {

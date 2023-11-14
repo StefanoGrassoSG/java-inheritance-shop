@@ -23,6 +23,13 @@ public class Smartphone extends Product {
 	public void setMemory(int memory) {
 		this.memory = memory;
 	}
+	@Override
+	public double getDiscountPrice() {
+		if(memory <= 32) {
+			return getVatPrice() * 0.95;
+		}
+		return getVatPrice() * 0.98;
+	}
 	
 	@Override
 	public String toString() {

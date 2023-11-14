@@ -36,6 +36,13 @@ public class Headphone extends Product{
 	public void setWired(boolean wired) {
 		this.wired = wired;
 	}
+	@Override
+	public double getDiscountPrice() {
+		if(wired) {
+			return getVatPrice() * 0.93;
+		}
+		return getVatPrice() * 0.98;
+	}
 	
 	@Override
 	public String toString() {

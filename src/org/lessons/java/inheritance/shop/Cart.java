@@ -5,17 +5,11 @@ import java.util.Scanner;
 
 public class Cart {
 	public static void main(String[] args) {
-//		Smartphone s = new Smartphone("galaxy", "molto brutto", 199, 20, "3234423432", 128); 
-//		Television t = new Television("samsung", "molto bella", 299, 20, 24, true);
-//		Headphone h = new Headphone("arctic boom pro sound PD", "molto molto bella", 99, 20, "black", true, true);
-//		
-//		System.out.println(s);
-//		System.out.println(t);
-//		System.out.println(h);
-		
 		Scanner in = new Scanner(System.in);
 		int prodCount = 0;
 		Product[] products = new Product[50];
+		boolean loyal = false;
+		double total = 0;
 		while(true) {
 			prodCount++;
 			System.out.print("che prodotto vuoi aggiungere?");
@@ -79,14 +73,20 @@ public class Cart {
 			System.out.print("vuoi aggiungere un'altro prodotto?");
 			String another = in.nextLine();
 			if(another.equals("no")) {
-				for(int x=0;x<products.length;x++) {
-					if(products[x] == null) {
-						break;
-					}
-					System.out.println(products[x]);
+				System.out.print("hai la carta fedelta?");
+				String loyalS = in.nextLine();
+				loyal = loyalS.equals("si")? true : false;
+				for (int x = 0; x < prodCount; x++) {
+				    System.out.println(products[x]);
+				    if (loyal) {
+				        total += products[x].getDiscountPrice();
+				    } else {
+				        total += products[x].getVatPrice();
+				    }
 				}
+				System.out.println("il prezzo finale è: " + String.format("%.2f", total));
 				break;
+				}	
 			}
 		}
 	}
-}

@@ -19,8 +19,11 @@ public class Television extends Product {
 		this.inches = inches;
 	}
 
-	public boolean isSmart() {
-		return smart;
+	public String isSmart() {
+		if(smart) {
+			return "si";
+		}
+		return "no";
 	}
 
 	public void setSmart(boolean smart) {

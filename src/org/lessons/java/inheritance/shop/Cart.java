@@ -14,9 +14,9 @@ public class Cart {
 			prodCount++;
 			System.out.print("che prodotto vuoi aggiungere?");
 			String product = in.nextLine();
-			if(!product.equals("headphone") || !product.equals("smartphone") || !product.equals("television")) {
-				System.out.print("puoi inserire solo: smartphone,television o headphone");
-				break;
+			if(!product.equals("cuffie") && !product.equals("smartphone") && !product.equals("tv")) {
+				System.out.print("puoi inserire solo: smartphone,tv o cuffie\n");
+				continue;
 			};
 			System.out.print("Inserisci il nome: ");
 			String name = in.nextLine();
@@ -24,7 +24,7 @@ public class Cart {
 			String description = in.nextLine();
 			System.out.print("Inserisci il prezzo: ");
 			double price = Double.parseDouble(in.nextLine());
-			System.out.print("Inserisci la percentuale id VAT che vuoi applicare: ");
+			System.out.print("Inserisci la percentuale di VAT che vuoi applicare: ");
 			int perc = Integer.parseInt(in.nextLine());
 			
 			if(product.equals("smartphone")) {
@@ -36,7 +36,7 @@ public class Cart {
 			products[prodCount - 1] = s;
 			}
 			
-			else if(product.equals("television")) {
+			else if(product.equals("tv")) {
 				System.out.print("Inserisci i pollici: ");
 				float inches = Float.parseFloat(in.nextLine());
 				System.out.print("Inserisci se è smart: ");
@@ -51,7 +51,7 @@ public class Cart {
 				products[prodCount - 1] = s;
 			}
 			
-			else if(product.equals("headphone")) {
+			else if(product.equals("cuffie")) {
 				System.out.print("Inserisci il colore: ");
 				String color = in.nextLine();
 				System.out.print("Inserisci se è wireless: ");
@@ -80,7 +80,10 @@ public class Cart {
 				System.out.print("hai la carta fedelta?");
 				String loyalS = in.nextLine();
 				loyal = loyalS.equals("si")? true : false;
-				for (int x = 0; x < prodCount; x++) {
+				for (int x = 0; x < products.length; x++) {
+				    if(products[x] == null) {
+				    	break;
+				    }
 				    System.out.println(products[x]);
 				    if (loyal) {
 				        total += products[x].getDiscountPrice();

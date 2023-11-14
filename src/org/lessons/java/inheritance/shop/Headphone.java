@@ -21,16 +21,22 @@ public class Headphone extends Product{
 		this.color = color;
 	}
 
-	public boolean isWireless() {
-		return wireless;
+	public String isWireless() {
+		if(wireless) {
+			return "si";
+		}
+		return "no";
 	}
 
 	public void setWireless(boolean wireless) {
 		this.wireless = wireless;
 	}
 
-	public boolean isWired() {
-		return wired;
+	public String isWired() {
+		if(wired) {
+			return "si";
+		}
+		return "no";
 	}
 
 	public void setWired(boolean wired) {

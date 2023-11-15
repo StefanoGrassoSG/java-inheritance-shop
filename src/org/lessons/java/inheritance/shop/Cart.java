@@ -26,7 +26,7 @@ public class Cart {
 			System.out.print("Inserisci la percentuale di VAT che vuoi applicare: ");
 			int perc = Integer.parseInt(in.nextLine());
 			
-			if(product.equals("equalsIgnoreCase")) {
+			if(product.equalsIgnoreCase("smartphone")) {
 			System.out.print("Inserisci l'IMEI code: ");
 			String imei = in.nextLine();
 			System.out.print("Inserisci la quantità di MB di memoria: ");
